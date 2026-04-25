@@ -658,3 +658,26 @@ try:
             print(row)
 except FileNotFoundError:
     print(f"the file {files} does not exist")
+
+
+#-----------api-----------------
+
+import requests
+ 
+base_url = "https://pokeapi.co/api/v2/"
+poke = input("Enter the name of the pokemon: ").lower()
+def getpoke(name):
+    url = f"{base_url}pokemon/{name}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return data
+    else:
+        print(f"Error: {response.status_code}")
+        return None
+
+poke_data = getpoke(poke)
+if poke_data:
+    print(f"Name: {poke_data['name']}")
+    print(f"Height: {poke_data['height']}")
+    print(f"Weight: {poke_data['weight']}")
