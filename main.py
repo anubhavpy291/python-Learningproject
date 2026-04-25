@@ -681,3 +681,26 @@ if poke_data:
     print(f"Name: {poke_data['name']}")
     print(f"Height: {poke_data['height']}")
     print(f"Weight: {poke_data['weight']}")
+
+#------------multithreading---------------
+import threading
+import time
+
+def call(names):
+    time.sleep(3)
+    print("call")
+def better():
+    time.sleep(1)
+    print("better")
+def saul():
+    time.sleep(5)
+    print("saul")
+
+s1 = threading.Thread(target=call)
+s1.start()
+
+s2 = threading.Thread(target=better)
+s2.start()
+
+s3 = threading.Thread(target=saul)
+s3.start()
