@@ -2,7 +2,7 @@ import math
 import random
 
 
-name = "Anubbhav"
+name = "anubbhav"
 age = 2
 height = 5.8
 print(f"hello my name is the {name} my age is {age}")
