@@ -594,3 +594,39 @@ finally:
     print("fuck off")
 
 #------file-handiling------
+
+import os
+
+if os.path.exists("README.md"):
+    print("file exists")
+else:
+    print("file does not exist")    
+
+if os.path.isfile("README.md"):
+    print("file")
+else:    
+    print("not a file")
+
+if os.path.isdir("README.md"):
+    print("directory")  
+else:
+    print("not a directory")
+
+# writing file----------
+
+import os
+
+file = "README.md"
+try:
+    with open(file, "w") as files:
+        files.write("This is a README file for the learning project.")
+    with open(file, "a") as f:
+        f.write("   this is for learning purpose")
+    with open(file, "x") as f:
+        f.write("   this is for learning purpose")
+except FileNotFoundError:
+    print("file dont found")
+
+except FileExistsError:
+    print("file already exist")
+

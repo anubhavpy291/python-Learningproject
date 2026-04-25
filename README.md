@@ -1,3 +1,1 @@
-# python-Learningproject
-its my learning python project code 
-followed by brocode python course
+This is a README file for the learning project.   this is for learning purpose
