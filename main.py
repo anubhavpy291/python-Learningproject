@@ -5,7 +5,7 @@ import random
 name = "Anubbhav"
 age = 2
 height = 5.8
-print(f"hello my name is {name} my age is {age}")
+print(f"hello my name is the {name} my age is {age}")
 
 
 # typecast
