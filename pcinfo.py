@@ -3,7 +3,7 @@ class pc:
     @staticmethod
     def info(namee):
         n = []
-        spec = {"dell inspiration 3537": (6,"i5 4200u",720,"itnel hd 4400")}
+        spec = {"dell inspiration 3537": (6,"i5 4200u",720,"intel hd 4400")}
         if spec.get(namee):
             print(namee)
             print("----------------------------------------")

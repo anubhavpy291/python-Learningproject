@@ -9,9 +9,9 @@ def news():
     data = response.json()
     return data
 news_data = news()
-for new in news_data['results']:
-    print(f"Title: {new['title']}")
+for news in news_data['results']:
+    print(f"Title: {news['title']}")
     print("\n")
-    print(f"Description: {new['description']}")
+    print(f"Description: {news['description']}")
     print("\n")
 print(f"its take {time.time() - start}sec")
