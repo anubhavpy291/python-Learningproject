@@ -36,19 +36,25 @@ class LinkList:
         curr.next = new_tail
         self.n += 1
     def insert_after(self,after,value):
-        new_node = node()
+        new_node = node(value)
         curr = self.head
         while curr != None:
             if curr.data == after:
                 break
             curr = curr.next
-        
+        if curr != None:
+            new_node.next = curr.next
+            curr.next = new_node
+        else:
+            print("invalid after")
             
 l = LinkList()
-l.insert_head(34)
-l.insert_head(34)
-l.insert_tail(69)
-l.insert_head(34)
-l.insert_head(34)
+l.insert_head(1)
+l.insert_tail(2)
+
+l.insert_tail(2)
+l.insert_tail(3)
+l.insert_tail(4)
+l.insert_after(2,67)
 print(l)
 print(len(l))
