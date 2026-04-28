@@ -35,9 +35,14 @@ class LinkList:
         
         curr.next = new_tail
         self.n += 1
-    def insert(self,index,value):
+    def insert_after(self,after,value):
+        new_node = node()
         curr = self.head
-        for i in range(self.n,index,-1):
+        while curr != None:
+            if curr.data == after:
+                break
+            curr = curr.next
+        
             
 l = LinkList()
 l.insert_head(34)
