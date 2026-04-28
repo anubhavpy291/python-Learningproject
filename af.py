@@ -92,7 +92,25 @@ class LinkList:
                 return pos
             curr = curr.next
             pos = pos + 1
-            return 'data not found'
+        return 'data not found'
+    def __getitem__(self, index):
+        curr = self.head
+        p = 0
+        while curr != None:
+            if p == index:
+                return curr.data
+            curr = curr.next
+            p = p +1
+        return 'index not found'
+    def __delitem__(self, key):
+        curr = self.head
+        p = 0
+        while curr != None:
+            if p == key:
+                self.remove(curr.data)
+            curr = curr.next
+            p = p + 1
+        return 'data not found'
 l = LinkList()
 l.insert_head(5)
 l.insert_tail(2)
@@ -102,6 +120,9 @@ l.insert_tail(3)
 l.insert_tail(4)
 l.insert_after(2,67)
 l.remove(67)
-print(l.search(3))
+del l[3]
 print(l)
+print(l[1])
+print(l.search(3))
+
 print(len(l))
