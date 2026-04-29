@@ -111,6 +111,14 @@ class LinkList:
             curr = curr.next
             p = p + 1
         return 'data not found'
+    def replace_max(self,value):
+        curr = self.head
+        max = curr
+        while curr != None:
+            if curr.data > max.data:
+                max = curr
+            curr = curr.next
+        max.data = value
 l = LinkList()
 l.insert_head(5)
 l.insert_tail(2)
@@ -119,8 +127,8 @@ l.insert_tail(2)
 l.insert_tail(3)
 l.insert_tail(4)
 l.insert_after(2,67)
-l.remove(67)
 del l[3]
+l.replace_max(69)
 print(l)
 print(l[1])
 print(l.search(3))
