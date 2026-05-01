@@ -119,6 +119,24 @@ class LinkList:
                 max = curr
             curr = curr.next
         max.data = value
+
+    def odd_number_adder(self):
+        curr = self.head
+        result = 0
+        while curr != None:
+            if (curr.data % 2) != 0:
+                result = result + curr.data
+            curr = curr.next
+        return result
+    def reverse(self):
+        prev = None
+        curr = self.head
+        while curr != None:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        self.head = prev
 l = LinkList()
 l.insert_head(5)
 l.insert_tail(2)
@@ -127,6 +145,8 @@ l.insert_tail(2)
 l.insert_tail(3)
 l.insert_tail(4)
 l.insert_after(2,67)
+print(l.odd_number_adder())
+
 del l[3]
 l.replace_max(69)
 print(l)
@@ -134,3 +154,5 @@ print(l[1])
 print(l.search(3))
 
 print(len(l))
+l.reverse()
+print(l)
