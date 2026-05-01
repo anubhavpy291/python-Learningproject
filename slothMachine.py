@@ -20,7 +20,6 @@ def payout(rands,bet):
             return bet * 7
         else:
             return 0
-        print(f"here is your update balance: {ba}")
     else:
         return 0
 
