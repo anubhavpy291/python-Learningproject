@@ -105,7 +105,6 @@ name = name.lower()
 print(name)
 q = name.count("a")
 print(q)
-
 #INDEXING
 
 print(name[0])
