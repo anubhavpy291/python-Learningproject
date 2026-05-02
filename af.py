@@ -25,13 +25,14 @@ class stacks:
         if self.isemoty():
             return 'emoty stake'
         else:
-            return self.top
+            return self.top.data
     def print(self):
         curr = self.top
         while curr != None:
             data =  curr.data
             curr = curr.next
             print(data)
+    
     def reverse(self):
         
         pre = None
@@ -51,6 +52,8 @@ class stacks:
             result = result + curr.data
             curr = curr.next
         print(result)
+    def size(self):
+        return self.n
 s = stacks()
 def textEditor(texts,operation):
     u = stacks()
@@ -77,7 +80,49 @@ def textEditor(texts,operation):
         curr = curr.next
     print(res)
     u.print()
+def balaced(texts):
+    S = stacks()
+    balace = False
+    for i in texts:
+        if i == "[":
+            S.push("[")
+        elif i == "{":
+            S.push("{")
+        elif i == "(":
+            S.push("(")
+
+
+        if i == "]":
+            if S.size() != 0:
+                print(S.size())
+                if S.peak() == '[':
+                    S.pop()
+                    balace = True
+                else:
+                    balace = False
+            else:
+                balace = False
+        
+        if i == "}":
+            
+            if S.peak() == "{" and S.size() != 0:
+                S.pop()
+                balace = True
+            else:
+                balace = False
+        if i == ")":
+            if S.peak() == "(" and S.size() != 0:
+                S.pop()
+                balace = True
+            else:
+                balace = False
+    print(balace)
+    print(S.size())
+    S.print()
 s.reverce_str('hello')
 s.print()
+s.push(2)
+print(s.peak())
 print("---------------------")
 textEditor("anubhav","uuuur")
+balaced("[a+b)")
