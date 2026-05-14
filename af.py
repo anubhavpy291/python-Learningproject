@@ -14,7 +14,7 @@ class disnory:
             if self.sloth[hash_value] == key:
                 self.data[hash_value] = value
             else:
-                new_hash_value = self.reHash_fun(self.hash_value)
+                new_hash_value = self.reHash_fun(hash_value)
                 while self.sloth[new_hash_value] != None and self.sloth[new_hash_value] != key:
                     new_hash_value = self.reHash_fun(new_hash_value)
                 if self.sloth[new_hash_value] == None:
@@ -26,9 +26,28 @@ class disnory:
         self.put(key,value)
     def reHash_fun(self,oldHash):
         return (oldHash + 1) % self.size
-D = disnory(5)_
+    def get(self,key):
+        starting_hash = self.hash_fun(key)
+        current_hash = starting_hash
+        while self.sloth[current_hash] != None:
+            if self.sloth[current_hash] == key:
+                print(self.data[current_hash])
+                break
+            current_hash = self.reHash_fun(current_hash)
+            if current_hash == starting_hash:
+                break
+    def __str__(self):
+        for i in range(len(self.sloth)):
+            if self.sloth[i] != None:
+                print(self.sloth[i],":",self.data[i],end=", ")
+
+        return ""
+D = disnory(5)
 D.put("python",67)
 D.put("csharp",69)
 D.put("python",69)
+D["js"] = 55
 print(D.data)
 print(D.sloth)
+D.get("js")
+print(D)
