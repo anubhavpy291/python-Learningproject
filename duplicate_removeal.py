@@ -1,13 +1,16 @@
-x = [0,0,0,1,1,1,2,2,3,4,5,6,6,6,7,8,9]
+x = [0,0,1,1,1,2,2,3,3,4]
 l = len(x)
-y =[]
+y = ""
+z = None
 for i in range(l - 1):
     for j in range(i+1,l):
         if x[i] == x[j]:
-            
+            x.pop(i)
             break
         else:
-            y.append(x[i])
+            y += str(x[i])
+            z = str(x[j])
             break
-x = y
+y += z
+print(int(y))
 print(x)
