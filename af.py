@@ -22,9 +22,11 @@ class disnory:
                     self.sloth[new_hash_value] = key
                 else:
                     self.data[new_hash_value] = value
+    def __setitem__(self, key, value):
+        self.put(key,value)
     def reHash_fun(self,oldHash):
         return (oldHash + 1) % self.size
-D = disnory(5)
+D = disnory(5)_
 D.put("python",67)
 D.put("csharp",69)
 D.put("python",69)
