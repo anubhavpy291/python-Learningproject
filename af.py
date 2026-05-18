@@ -64,7 +64,7 @@ class LinkList:
                 return pos
             curr = curr.next
             pos = pos + 1
-        return 'data not found'
+        return -1
     def __getitem__(self, index):
         curr = self.head
         p = 0
@@ -101,3 +101,8 @@ class disconry:
         for i in range(capicity):
             l.append(LinkList())
         return l
+    def put(self,key,value):
+        bucketIndex = self.hash_function(key)
+
+    def hash_function(self,key):
+        return hash(key) % self.size
