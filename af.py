@@ -74,6 +74,14 @@ class LinkList:
             curr = curr.next
             p = p +1
         return 'index not found'
+    def get_node_at_index(self,nodexindex):
+        tmp = self.head
+        count = 0
+        while tmp is not None:
+            if count == nodexindex:
+                return tmp
+            tmp = tmp.next
+            count += 1
     def __delitem__(self, key):
         curr = self.head
         p = 0
@@ -86,11 +94,12 @@ class LinkList:
 
 l = LinkList()
 l.add("hii",45)
-l.add("hii",45)
-l.add("hii",45)
-l.add("hii",45)
-print(l)
+l.add("df",3)
+l.add("ghf",4)
+l.add("as",5)
 
+print(l)
+print(l.get_node_at_index(0).key)
 class disconry:
     def __init__(self,capicity):
         self.capicity = capicity
@@ -104,10 +113,26 @@ class disconry:
     def put(self,key,value):
         bucketIndex = self.hash_function(key)
         node_index = self.get_node_index(bucketIndex,key)
+        print(bucketIndex,node_index)
         if bucketIndex == -1:
             self.bucket[node_index].add(key,value)
+            self.size += 1
+
+        else:
+            node = self.bucket[bucketIndex].get_node_at_index(node_index)
     def get_node_index(self,bucketindex,key):
         node_index = self.bucket[bucketindex].search(key)
         return node_index
     def hash_function(self,key):
-        return hash(key) % self.size
+        return abs(hash(key)) % self.capicity
+    
+d = disconry(5)
+d.put("ls",23)
+d.put("lds",23)
+d.put("las",23)
+d.put("lfs",23)
+n = 0
+while n < len(d.bucket):
+
+    print(d.bucket[n])
+    n+=1
