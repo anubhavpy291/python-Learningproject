@@ -103,6 +103,11 @@ class disconry:
         return l
     def put(self,key,value):
         bucketIndex = self.hash_function(key)
-
+        node_index = self.get_node_index(bucketIndex,key)
+        if bucketIndex == -1:
+            self.bucket[node_index].add(key,value)
+    def get_node_index(self,bucketindex,key):
+        node_index = self.bucket[bucketindex].search(key)
+        return node_index
     def hash_function(self,key):
         return hash(key) % self.size
