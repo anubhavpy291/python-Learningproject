@@ -114,7 +114,7 @@ class disconry:
         bucketIndex = self.hash_function(key)
         node_index = self.get_node_index(bucketIndex,key)
         print(bucketIndex,node_index)
-        if bucketIndex == -1:
+        if node_index == -1:
             self.bucket[node_index].add(key,value)
             self.size += 1
 
@@ -128,11 +128,7 @@ class disconry:
     
 d = disconry(5)
 d.put("ls",23)
+d.put("ls",233)
 d.put("lds",23)
 d.put("las",23)
 d.put("lfs",23)
-n = 0
-while n < len(d.bucket):
-
-    print(d.bucket[n])
-    n+=1
