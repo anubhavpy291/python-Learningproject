@@ -58,9 +58,41 @@ tmp = ("gooner",)
 t += tmp
 print(t)
 
-#when you create tuple and provide data in tuple its called tuple and you  can sign index valuse to vaiable by index
+#when you create tuple and provide data in tuple its called tuple packing and when  sign variable to index value its called tuple unpacking
 
 t1 = (45,67,12,34,65)
 (age,height,weight,wealth,bodycount) = t1
 
 print(age,height,weight,wealth)
+
+#when unpaking tuple , the variable is less than the index in tuple so remaining index apply to aastrik * variable as the list
+
+(a,b,*c) = t1
+print(c)
+
+#===================loop through tuple
+
+#for loop
+for x in t1:
+    print(x)
+
+#loop throgh index and using range and len function 
+for x in range(len(t1)):
+    print(t1[x])
+
+#loop using while loop 
+x = 0
+while x < len(t1):
+    print(t1[x])
+    x += 1
+
+#adding or joining tuples
+t2 = (1,2,3,4,5)
+t3 = (6,7,8,9)
+t4 = t2 + t3
+print(t4)
+
+#multiplying tuple
+
+t2 = t2 * 2
+print(t2)
