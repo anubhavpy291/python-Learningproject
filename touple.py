@@ -96,3 +96,10 @@ print(t4)
 
 t2 = t2 * 2
 print(t2)
+
+#---------------------------tuple method
+
+#
+t2.count() # give number of item in tuple
+t2.index(3) # give the value of index or position in tuple
+
