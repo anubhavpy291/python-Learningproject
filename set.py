@@ -88,4 +88,65 @@ s9.update(s)
 print(s9)
 
 #intersection it return new set that contains item that present in both set
+s11 = {"hii","how","are"}
+s12 = s11.intersection(s9)
+print(s12)
 
+#you can use & operator to use instedof intersection give same result as intersection you can use only set ot set its does not support other data type like intersection
+s12 = s11 & s9
+print(s12)
+
+#direct intersection
+s11.intersection_update(s9)
+print(s11)
+
+#difference remove same item present in both set1 and 2 from set set 1 
+a = {2,4,56}
+b = {2,56,673,3445}
+c = a.difference(b) # remove the same item present in botht from a 
+print(c)
+
+#direct remove from set 1 
+
+#a.difference_update(b)
+print(a)
+
+# yoou  can direct use the - operator to see the sane result but you can inly use set tot set not other like differenece 
+
+c = a - b
+print(c)
+
+# semmartic  differnece keep only ittem that are not present in both 
+c = a.symmetric_difference(b) 
+print(c)
+
+# direct symmetric  differnece 
+
+a.symmetric_difference_update(b)
+print(a)
+
+# you   can also use ^ to get same result 
+
+c = a ^ b
+print(c)
+
+#frgenset 
+a = frozenset({1, 2})
+b = frozenset({3, 4})
+c = frozenset({2, 3})
+print(a.isdisjoint(b))
+print(a.isdisjoint(c))
+
+#subsert
+a = frozenset({1, 2})
+b = frozenset({1, 2, 3})
+print(a.issubset(b))
+print(a <= b)
+print(a < b)
+
+#superset
+a = frozenset({1, 2, 3})
+b = frozenset({1, 2})
+print(a.issuperset(b))
+print(a >= b)
+print(a > b)
