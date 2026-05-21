@@ -18,6 +18,9 @@ update_pares = sub_pares.add_parser("update",help="update the status of task")
 update_pares.add_argument("id",type=int)
 update_pares.add_argument("status",choices=["done","doing","todo"])
 
+#-----------delete------------------------
+del_pares = sub_pares.add_parser("del",help="delete the task")
+del_pares.add_argument("del_id",type=int)
 args = pares.parse_args()
 
 l = []
@@ -42,6 +45,12 @@ if args.command == "update":
         l[args.id - 1]["status"] = "done"
     if args.status == "todo":
         l[args.id - 1]["status"] = "todo"
+if args.command == "del":
+    d_id = args.del_id - 1
+    if len(l) > d_id:
+        l.pop(d_id)
+    else:
+        print("id not found")
 if args.command == "list":
     if args.all == "all":
         for x in l:
@@ -58,5 +67,9 @@ if args.command == "list":
         for x in l:
             if x["status"] == "doing":
                 print(x["id"],":", x["name"],":",x["status"])
+j = 1 
+for x in l:
+    x["id"] = j
+    j += 1 
 with open(jfile,"w") as f1:
     json.dump(l,f1)
