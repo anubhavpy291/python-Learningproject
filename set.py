@@ -64,7 +64,7 @@ for x in s2:
     print(f"i found the hreu in s2({x})")
 
 #------------union-set-------------------------------
-#union keep only duplicates and return its in new set
+#union keep only unduplicates and return its in new set
 s5  = {1,2,3,4,7,7,2,9}
 s6 = {1,3,5,4}
 s8 = s5.union(s6)
@@ -150,3 +150,4 @@ b = frozenset({1, 2})
 print(a.issuperset(b))
 print(a >= b)
 print(a > b)
+
