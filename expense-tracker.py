@@ -52,8 +52,6 @@ with open(cfile,"r") as f:
             d_id = int(x["id"])
             if d_id == args.id:
                 x = l.pop(args.id - 1)
-            else:
-                print("invalid id ")
 j = 0 
 for x in l:
     j += 1
