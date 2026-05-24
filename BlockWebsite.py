@@ -1,4 +1,3 @@
-import os 
 import argparse 
 
 pares = argparse.ArgumentParser()
