@@ -14,5 +14,5 @@ def revice():
 
 threading.Thread(target=revice).start()
 while True:
-    entermsq = input("server: \n")
-    data.send(f"server: {entermsq}\n".encode())
+    entermsq = input("\nserver: ")
+    data.send(f"\nserver: {entermsq}".encode())

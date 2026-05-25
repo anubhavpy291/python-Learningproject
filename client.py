@@ -13,5 +13,5 @@ def revice():
 threading.Thread(target=revice).start()
 while True:
     
-    entermsq = input("client: \n")
-    sockets.send(f"client: {entermsq}\n".encode())
+    entermsq = input("\nclient: ")
+    sockets.send(f"\nclient: {entermsq}".encode())
