@@ -73,3 +73,4 @@ d2.update({"class":11})
 d2["look"] = 6
 
 #removing dictionary item by pop method
+
