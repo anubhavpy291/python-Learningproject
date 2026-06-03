@@ -1,23 +1,17 @@
-s = "()"
-ins = []
-a = False
-b = None
-for i in s:
-    
-    
-    if len(ins) != 0:
-        b = ins[-1]
-    if i == "(" or i == "{" or i == "[":
-        ins.append(i)
-        b = i
-    elif (i == ")" and b == "(")  or (i == "}" and b == "{") or (i == "]" and b == "["):
-        print(ins)
-        print(b,i)
-        del ins[-1]
-        b = None
-        
-if len(ins) == 0:
-    a = True
-else:
-    a = False
-print(a)
+h = "sedbutswd"
+n = "sad"
+a = 0
+l = len(h)
+b = len(n)
+A = 0
+while a < l:
+    print(h[a:b])
+    c = h[a:b]
+    if c == n:
+        A = a
+        break
+    else:
+        A = -1
+    b += 1
+    a += 1
+print(A)
