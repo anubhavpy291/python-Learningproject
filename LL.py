@@ -66,8 +66,38 @@ class ll:
         if curr != None:
             curr.next = curr.next.next  
         else:
-            print("node not found")       
+            print("node not found") 
+    def reverse(self):
+        curr = self.head
+        prev = None
+        while curr != None:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+        self.head = prev
+
+
+def sortndmerge(ll1,ll2):
+    curr = node(0)
+    l1 = ll1.head
+    l2 = ll2.head
+    while l1 != None or l2 != None:
+        
+        if l1.data <= l2.data:
+            curr.data = l1.data
+            new_node = node(0)
+            curr.next = new_node
+            new_node.data = l2.data 
+            print(curr.data)
+            curr = curr.next
+            
+            
+        l1 = l1.next
+        l2  = l2.next
+    
 l = ll([1])
+L = ll([2,3,4])
 l.append(34)
 l.add_after(44,34)
 l.add_before(24,34)
@@ -76,4 +106,5 @@ l.left_append(14)
 l.left_append(14)
 l.remove(44)
 l.remove(24)
+l.reverse()
 l.repr()
