@@ -11,8 +11,8 @@ data = np.array([
 ])
 x = data[:,0]
 y = data[:,1]
-b = 1
-w = 0.5
+b = 0.1
+w = 0.1
 lr = 0.1
 
 def sigmoid(x):
@@ -22,8 +22,7 @@ def sigmoid_dervivation(x):
 for i in range(100000):
     z = x * w + b
 
-    prediction = sigmoid(z)
-
+    prediction = z
     loss = np.mean((y - prediction)**2)
 
     error = y - prediction
@@ -35,11 +34,9 @@ for i in range(100000):
     b += lr * gradiant_b
 
 i = int(input("elo_diff: "))
-pred = sigmoid(i*w+b)
+pred = i*w+b
 print(pred )
-plot.scatter(x,x)
-plot.plot(pred)
-plot.show()
+
 #x = data[:,0]
 #y = data[:,1]
 

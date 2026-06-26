@@ -28,17 +28,3 @@ while True:
     p = freeforword(inp)
     print(p)
     
-    plot.figure(figsize=(8,5))
-
-    # Training data
-    plot.scatter(x, y, color="blue", label="Training Data")
-
-    # Learned line
-    plot.plot(x, p, color="red", label="Prediction")
-
-    # User input
-    plot.scatter(inp, p, color="green", s=120, label="Your Input")
-
-    plot.legend()
-    plot.grid(True)
-    plot.show()
