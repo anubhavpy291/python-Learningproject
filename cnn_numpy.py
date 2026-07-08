@@ -56,5 +56,4 @@ b = np.zeros(output_size)
 
 dense_output = flat @ W + b
 
-# Softmax
 prediction = softmax(dense_output)
